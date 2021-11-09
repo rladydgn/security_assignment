@@ -1,7 +1,7 @@
 # 정보보호와 시스템보안 프로젝트 : 웹공격탐지
 목적 : HTTP Request의 공격로그(비정상로그) 탐지
 
-팀원 : 안성열(20163121) / 김용후(20181589) / 문예찬(20192230)
+팀원 : 김용후(20181589) / 문예찬(20192230) / 안성열(20163121)
 
 ## 함수설명
 * def parsing : 데이터셋의 로그 한 부위에서 HTTP주소와 바디(POST)만 가져오는 함수입니다. (+ 하단 추가 설명)
@@ -25,7 +25,7 @@
 
 ### 4. RNN 학습 과정
 * 학습 모델은 RNN을 사용하였습니다. 반복 학습을 통해 정확도를 높은 수치로 올릴 수 있습니다.
-* 임베딩 벡터의 차원 : 32 / RNN 셀의 hidden_size = 32 / batch_size = 64 / 반복횟수 : 5
+* 임베딩 벡터의 차원 : 32 / RNN 셀의 hidden_size = 32 / batch_size = 64 / 반복횟수 : loop 설정
 
 
 ### 5. 결과 그래프 출력
@@ -41,4 +41,4 @@ check_dataset.py 코드를 통해 데이터셋의 User-Agent, Pragma, Cache-cont
 
 ## 결과 미리보기
 
-<img width="991" alt="스크린샷 2021-11-09 오후 6 50 34" src="https://user-images.githubusercontent.com/24891555/140918432-144398e2-6359-4d87-9776-6d2bfffdee88.png">
+![123](https://user-images.githubusercontent.com/24891555/140931275-1c766819-c5ce-46f4-91c3-1776a61c2ec7.PNG)

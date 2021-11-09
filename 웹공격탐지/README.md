@@ -45,7 +45,11 @@ check_dataset.py 코드를 통해 데이터셋의 User-Agent, Pragma, Cache-cont
 [정보보안프로젝트_최종.py 실행결과]
 
 테스트셋 accuracy: 0.9908
+
 테스트셋 precision: 0.9976
+
 테스트셋 recall: 0.9801
+
 테스트셋 f1_score : 0.9887
+
 [정보보안프로젝트_최종.ipynb 실행결과]

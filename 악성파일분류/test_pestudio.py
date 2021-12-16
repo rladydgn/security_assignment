@@ -131,10 +131,6 @@ def run():
     test_data_path = 'C:\\Users\\zxcv1\\Desktop\\data\\PESTUDIO\\검증데이터\\'
     no_label_data_path = 'C:\\Users\\zxcv1\\Desktop\\data\\PESTUDIO\\테스트데이터\\'
 
-    train_data_path2 = 'C:\\Users\\zxcv1\\Desktop\\train\\'
-    test_data_path2 = 'C:\\Users\\zxcv1\\Desktop\\test\\'
-    no_label_data_path2 = 'C:\\Users\\zxcv1\\Desktop\\val\\'
-
     train_x, train_y = pestudio_data_labeling(train_data_path, fp1)
     test_x, test_y = pestudio_data_labeling(test_data_path, fp2)
     val_x = pestudio_data_parsing(no_label_data_path)

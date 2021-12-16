@@ -16,7 +16,7 @@ EMBER - 히스토그램, 스트링을 특징벡터로 사용할 경우 오히려
 
 PESTUDIO - 특징 대부분이 문자열 형태인 json파일 입니다. 
 
-image 파일 내에 overview, indicators, version을 포함한 정보들이 들어있습니다.
+image 파일 내에 overview, indicators, resources, version을 포함한 정보들이 들어있습니다.
 1. overview는 파일의 전반적인 내용을 요약한 정보입니다.
 - overview에서는 description과 file-type을 feature로 뽑았습니다.
 - description은 파일이 어떤 역할을 하는지 설명하는 정보입니다. 정상 파일의 경우 익숙한 단어인 Adobe Flash 등의 단어가 등장합니다. 그러나 악성 파일의 경우 알 수 없는 단어가 등장합니다.
@@ -24,7 +24,10 @@ image 파일 내에 overview, indicators, version을 포함한 정보들이 들�
 2. indicators는 pestudio로 분석한 결과를 요약한 정보입니다. 
 - 분석기준에 따라 위험등급이 나누어져 있습니다. 위험 등급이 1, 2 인 기준의 내용을 feature로 뽑았습니다.
 
-3. version은 파일의 버전 정보를 담고 있습니다.
+3. resources는 사용한 resource의 정보를 담고 있습니다.
+- 사용한 resource의 language를 fearture로 뽑았습니다. 정상 파일의 경우 English-United States, neutral 값이 대부분이나, 악성파일은 특정 나라의 언어로만 기술되는 경우가 빈번했습니다.
+
+4. version은 파일의 버전 정보를 담고 있습니다.
 - 특히 OrginalFilename 과 InternalName을 담고 있는데, 만약 두 내용이 다른 경우 악성코드로 의심해볼 수 있습니다. 그러나 OriginalFilename, InternalName 정보가 없는 json 파일이 많고 처리 과정이 복잡하여 feature로 넣지 못했습니다.
 
 

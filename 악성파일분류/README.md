@@ -20,7 +20,6 @@ image 파일 내에 overview, indicators, version을 포함한 정보들이 들�
 1. overview는 파일의 전반적인 내용을 요약한 정보입니다.
 - overview에서는 description과 file-type을 feature로 뽑았습니다.
 - description은 파일이 어떤 역할을 하는지 설명하는 정보입니다. 정상 파일의 경우 익숙한 단어인 Adobe Flash 등의 단어가 등장합니다. 그러나 악성 파일의 경우 알 수 없는 단어가 등장합니다.
-- file-type에는 ############
 
 2. indicators는 pestudio로 분석한 결과를 요약한 정보입니다. 
 - 분석기준에 따라 위험등급이 나누어져 있습니다. 위험 등급이 1, 2 인 기준의 내용을 feature로 뽑았습니다.

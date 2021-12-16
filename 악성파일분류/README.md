@@ -20,6 +20,10 @@ PESTUDIO - 특징 대부분이 문자열 형태인 json파일 입니다. image �
 
 ## 파일 용도
 common - 공통적으로 사용되는 함수입니다.
+
 test_ember - ember json 파일의 정보를 추출하여 학습시킨후 검증과 테스트데이터를 예측하는 용도입니다.
+
 test_peminer - peminer json 파일의 정보를 추출하여 학습시킨후 검증과 테스트데이터를 예측하는 용도입니다.
+
 test_pestudio - pestudio json 파일의 정보를 추출하여 학습시킨후 검증과 테스트데이터를 예측하는 용도입니다.
+

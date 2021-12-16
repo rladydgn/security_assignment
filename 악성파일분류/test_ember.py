@@ -196,6 +196,6 @@ for key in test_file_list:
 en_soft_pred = test_ensemble_soft(X_test, models)
 answer = []
 for i in range(len(en_soft_pred)):
-    answer.append([filename[i], en_soft_pred[i]])
+    answer.append([filename[i][:-5], en_soft_pred[i]])
 
 save_csv(answer, 'ember_answer')

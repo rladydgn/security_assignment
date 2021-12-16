@@ -1,6 +1,7 @@
 import os
 
 from common import save_csv
+from sklearn.metrics import f1_score
 
 def read_label_csv(path):
     label_table = dict()
@@ -36,6 +37,8 @@ for i in range(len(val_answer)):
     if val_pred[i] == val_answer[i]:
         cnt += 1
 print("acc : ", cnt/len(val_answer))
+f1 = f1_score(val_answer, val_pred)
+print("f1 score :", f1)
 
 # test 예측 csv 파일 불러오기
 ember_label_table = read_label_csv("ember_answer.csv")

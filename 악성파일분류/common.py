@@ -127,7 +127,7 @@ def test_ensemble_soft(X, models):
 
     return final_preds
 
-def save_csv(df):
+def save_csv(df, filename):
     answer = pd.DataFrame(df)
     answer.columns = ['파일', '정답']
-    answer.to_csv('ember_answer.csv', index=False, encoding='cp949')
+    answer.to_csv(filename + '.csv', index=False, encoding='cp949')

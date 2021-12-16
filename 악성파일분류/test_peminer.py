@@ -11,6 +11,7 @@ class PeminerParser:
     def process_report(self):
         # 사전 KEY값 추출(숫자)
         self.vector = [value for _, value in sorted(self.report.items(), key=lambda x: x[0])]
+        self.test = [_ for _, value in sorted(self.report.items(), key=lambda x: x[0])]
         # nouse = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 16, 18, 27, 28, 29, 31, 33, 35, 36, 37, 38, 39, 40, 41, 42,
         #          43, 45, 46, 47, 48, 49, 50, 112, 113, 115, 116, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128,
         #          129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 151,
@@ -106,4 +107,4 @@ answer = []
 for i in range(len(en_soft_pred)):
     answer.append([filename[i][:-5], en_soft_pred[i]])
 
-save_csv(answer)
+save_csv(answer, 'peminer_answer')

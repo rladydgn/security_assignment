@@ -13,6 +13,7 @@ def pestudio_data_parsing(filepath):
         temp = ""
 
         if len(json_data['image']['indicators']) == 1:
+            temp += 'truevirus '
             continue
         if json_data['image']['overview']['description'] != None:
             temp += json_data['image']['overview']['description'] + " "
@@ -27,6 +28,15 @@ def pestudio_data_parsing(filepath):
         for indicator in json_data['image']['indicators']['indicator']:
             if indicator['@severity'] == ('1' or '2'):
                 temp += str(indicator['@detail']) + " "
+            if indicator['@xml-id'] == '1120':
+                if int(indicator['@detail'].split(" ")[1].split("/")[0]) > 30:
+                    temp += 'truevirus '
+
+        # try:
+        #     for resource in json_data['image']['resources']['instance']:
+        #         temp += resource['@language'] + " "
+        # except KeyError:
+        #     continue
 
         data.append(temp)
 
@@ -53,6 +63,7 @@ def pestudio_data_labeling(filepath, fp):
         temp = ""
 
         if len(json_data['image']['indicators']) == 1:
+            temp += 'truevirus '
             continue
         if json_data['image']['overview']['description'] != None:
             temp += json_data['image']['overview']['description'] + " "
@@ -67,6 +78,15 @@ def pestudio_data_labeling(filepath, fp):
         for indicator in json_data['image']['indicators']['indicator']:
             if indicator['@severity'] == ('1' or '2'):
                 temp += str(indicator['@detail']) + " "
+            if indicator['@xml-id'] == '1120':
+                if int(indicator['@detail'].split(" ")[1].split("/")[0]) > 30:
+                    temp += "truevirus "
+        try:
+            for resource in json_data['image']['resources']['instance']:
+                if resource['@language'] :
+                    temp += resource['@language'] + " "
+        except:
+            temp += 'none_language '
 
         label.append(answers[json_file[:-5]])
         data.append(temp)
@@ -109,6 +129,10 @@ def run():
     train_data_path = 'C:\\Users\\zxcv1\\Desktop\\data\\PESTUDIO\\학습데이터\\'
     test_data_path = 'C:\\Users\\zxcv1\\Desktop\\data\\PESTUDIO\\검증데이터\\'
     no_label_data_path = 'C:\\Users\\zxcv1\\Desktop\\data\\PESTUDIO\\테스트데이터\\'
+
+    train_data_path2 = 'C:\\Users\\zxcv1\\Desktop\\train\\'
+    test_data_path2 = 'C:\\Users\\zxcv1\\Desktop\\test\\'
+    no_label_data_path2 = 'C:\\Users\\zxcv1\\Desktop\\val\\'
 
     train_x, train_y = pestudio_data_labeling(train_data_path, fp1)
     test_x, test_y = pestudio_data_labeling(test_data_path, fp2)

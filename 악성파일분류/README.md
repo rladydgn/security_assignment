@@ -28,3 +28,14 @@ test_peminer - peminer json 파일의 정보를 추출하여 학습시킨후 검
 test_pestudio - pestudio json 파일의 정보를 추출하여 학습시킨후 검증과 테스트데이터를 예측하는 파일입니다.
 
 ensemble - 위의 세 종류의 파일을 학습하여 예측한 값을 하드보팅하여 최종적으로 검증을 진행하고 정답을 예측하는 파일입니다.
+
+## 결론
+
+PEMINER - rf, lgbm, adaboost 를 사용하여 소프트 보팅
+
+EMBER - rf, lgbm, adaboost 를 사용하여 소프트 보팅
+
+PESTUDIO - rf 를 사용하여 학습
+
+세 결과를 하드보팅하여 최종적으로 테스트데이터 셋에 대한 예측값을 얻었습니다.
+세 결과를 종합한 검증데이터에 대한 정확도는 0.956이 나왔습니다.

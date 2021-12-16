@@ -32,11 +32,12 @@ def pestudio_data_parsing(filepath):
                 if int(indicator['@detail'].split(" ")[1].split("/")[0]) > 30:
                     temp += 'truevirus '
 
-        # try:
-        #     for resource in json_data['image']['resources']['instance']:
-        #         temp += resource['@language'] + " "
-        # except KeyError:
-        #     continue
+        try:
+            for resource in json_data['image']['resources']['instance']:
+                if resource['@language']:
+                    temp += resource['@language'] + " "
+        except:
+            temp += 'none_language '
 
         data.append(temp)
 

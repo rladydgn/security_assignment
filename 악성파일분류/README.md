@@ -14,7 +14,7 @@ PEMINER - 모든 특징들이 실수형태로 저장되어 있어 전처리가 �
 
 EMBER - 히스토그램, 스트링을 특징벡터로 사용할 경우 오히려 정확도가 낮아져 제외시켰습니다. 대부분의 특징들이 실수형태로 되어있습니다. general, datadirectories, header, section 영역의 실수들을 특징벡터로 이용하였고, import에 있는 파일의 개수, export(모두 0)에 있는 파일의 개수를 추가로 특징벡터로 이용하였습니다. PEMINER과 마찬가지로 randomforest, lightgbm, adaboost를 이용하여 학습과 검증을 진행하였습니다. 각각 검증 정확도는 0.9492, 0.9442, 0.8812가 나왔습니다.  하드보팅, 소프트보팅의 정확도는 각각 0.9459, 0.9508이 나왔습니다. f1 score는 각각 0.9631, 0.9663이 나왔습니다. 소프트 보팅의 결과가 더 좋아 소프트 보팅을 이용하였습니다.
 
-PESTUDIO - 특징 대부분이 문자열 형태인 json파일 입니다. image 안의 overview 안의 description이 None이 아닐 경우와 맞을경우를 구분하여 특징벡터로 추가해 주었습니다. image 안의 overview 안의 file-dype이 None일 경우와 아닐경우를 구분하여 특징벡터로 추가해 주었습니다. image 안의 indicators 안의 indicator에 @serverity가 1 또는 2인 것들의 @detail 문자열들을 특징벡터에 추가해 주었습니다. 이렇게 구한 문자열 특징벡터들을 토큰화 시켜 실수형태로 변환해 주었습니다.
+PESTUDIO - 특징 대부분이 문자열 형태인 json파일 입니다. image 안의 overview 안의 description이 None이 아닐 경우와 맞을경우를 구분하여 특징벡터로 추가해 주었습니다. image 안의 overview 안의 file-dype이 None일 경우와 아닐경우를 구분하여 특징벡터로 추가해 주었습니다. image 안의 indicators 안의 indicator에 @serverity가 1 또는 2인 것들의 @detail 문자열들을 특징벡터로 이용하였습니다. 이렇게 구한 문자열 특징벡터들을 토큰화 시켜 실수형태의 특징벡터로 변환해 주었습니다.
 
 처음엔 이 세 종류의 파일에서 나온 특징들을 모두 합쳐 함께 모델을 학습시키려고 하였으나 PESTUDIO의 파일 개수가 다른 종류에 비해 조금 적어 각각의 특징벡터를 이용해 각각 학습시킨뒤 이를 하드보팅하여 결과를 도출해 내었습니다.
 
